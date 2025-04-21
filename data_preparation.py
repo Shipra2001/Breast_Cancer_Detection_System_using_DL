@@ -8,7 +8,7 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 
 class BreakHisLoader:
-    def __init__(self, root_path=r"C:\Users\DELL\Downloads\BreaKHis_v1\BreaKHis_v1"):
+    def __init__(self, root_path=r"D:\\People work\\Shipra2\\Breast_Cancer_Detection_System_using_DL\\BreaKHis_v1"):
         self.root_path = os.path.normpath(root_path)
         self.classes = {'benign': 0, 'malignant': 1}
         self.magnifications = ['40X', '100X', '200X', '400X']
@@ -189,7 +189,7 @@ if __name__ == "__main__":
         print("Current Working Directory:", os.getcwd())
 
         # Initialize loader with fixed dataset path
-        loader = BreakHisLoader(root_path=r"C:\Users\DELL\Downloads\BreaKHis_v1\BreaKHis_v1")
+        loader = BreakHisLoader(root_path=r"D:\\People work\\Shipra2\\Breast_Cancer_Detection_System_using_DL\\BreaKHis_v1")
         
         # Load dataset
         X_train, X_test, y_train, y_test, df_meta = loader.load_dataset(

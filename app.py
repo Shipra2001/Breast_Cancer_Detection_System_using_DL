@@ -6,7 +6,7 @@ import os
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
-model = load_model("breast_cancer_model.h5")
+model = load_model("D:\\People work\\Shipra2\\Breast_Cancer_Detection_System_using_DL\\best_model.h5")
 
 UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -27,6 +27,11 @@ def predict():
     if file:
         filename = secure_filename(file.filename)
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+
+        # Create upload directory if it doesn't exist
+        if not os.path.exists(app.config['UPLOAD_FOLDER']):
+            os.makedirs(app.config['UPLOAD_FOLDER'])
+
         file.save(filepath)
 
         # Load and preprocess image
@@ -43,6 +48,7 @@ def predict():
                                prediction_text=f"Prediction: {label}",
                                confidence_text=f"Confidence Score: {confidence}%",
                                img_path=filepath)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

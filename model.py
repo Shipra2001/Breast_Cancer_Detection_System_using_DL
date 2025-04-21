@@ -9,8 +9,8 @@ from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLRO
 from tensorflow.keras.optimizers import Adam
 
 # Set paths - ensure this matches your directory structure
-base_path = os.path.join("C:", "Users", "DELL", "Downloads", "BreaKHis_v1")
-dataset_path = os.path.join(base_path, "histology_slides", "breast")
+# base_path = os.path.join("C:\\", "Users", "ramiz", "Downloads", "BreaKHis_v1")
+dataset_path = os.path.join("D:\\People work\\Shipra2\\Breast_Cancer_Detection_System_using_DL\\BreaKHis_v1", "histology_slides", "breast")
 
 # Verify directory structure
 print("Verifying directory structure...")
